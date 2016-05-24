@@ -18,4 +18,4 @@ port 24224
 When using the -i flag it appends config to the current config...in this image its empty so all config is supplied on the command line...you could obviously just point it to a different config file that you bind mount if you wish.
 fluentd needs the config to be newline separated.
 
-If you dont have the option to specify the new lines like this, docker supports '\n' to inject newlines
+If you dont have the option to specify the new lines like this, docker supports '\n' to inject newlines.
