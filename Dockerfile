@@ -1,4 +1,4 @@
-FROM fluent/fluentd:latest
+FROM fluent/fluentd:v0.12.23
 MAINTAINER Brendan Beveridge <brendan@nodeintegration.com.au>
 USER fluent
 WORKDIR /home/fluent
