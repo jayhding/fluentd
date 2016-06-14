@@ -1,8 +1,10 @@
-# fluentd-elasticsearch
+# fluentd
 ## This image is based off the fluent/fluentd base image with the following modifications:
 
-* added elasticsearch plugin
-* changed fluent.conf to be empty....reasoning behind this is it allows you to use the -i flag to define all of your config
+* added fluent-plugin-elasticsearch
+* added fluent-plugin-parser
+* added fluent-plugin-rewrite-tag-filter
+* changed fluent.conf to be a forwarder only with some basic additions
 
 ## Using this image eg:
 
