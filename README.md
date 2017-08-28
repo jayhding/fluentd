@@ -8,14 +8,16 @@
 
 ## Using this image eg:
 
-`docker run nodeintegration/fluentd-elasticsearch fluentd -c /fluentd/etc/fluent.conf -i '
+```
+docker run nodeintegration/fluentd-elasticsearch fluentd -c /fluentd/etc/fluent.conf -i '
 <source>
 @type forward
 port 24224
 </source>
 <match **>
 @type stdout
-</match>'`
+</match>'
+```
 
 When using the -i flag it appends config to the current config...in this image its empty so all config is supplied on the command line...you could obviously just point it to a different config file that you bind mount if you wish.
 fluentd needs the config to be newline separated.
