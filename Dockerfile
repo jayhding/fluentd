@@ -4,5 +4,6 @@ EXPOSE 24224
 RUN gem install fluent-plugin-elasticsearch && \
     gem install fluent-plugin-aws-elasticsearch-service && \
     gem install fluent-plugin-parser && \
+    gem install fluent-plugin-docker-format && \
     gem install fluent-plugin-rewrite-tag-filter
 CMD fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
