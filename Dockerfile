@@ -5,4 +5,5 @@ RUN gem install fluent-plugin-elasticsearch && \
     gem install fluent-plugin-aws-elasticsearch-service && \
     gem install fluent-plugin-parser && \
     gem install fluent-plugin-rewrite-tag-filter
-CMD fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
+RUN touch /fluentd/etc/fluentd.conf
+CMD fluentd -c /fluentd/etc/fluentd.conf -p /fluentd/plugins $FLUENTD_OPT
