@@ -26,7 +26,7 @@ RUN apk update \
  && echo 'gem: --no-document' >> /etc/gemrc \
  && gem install oj -v 2.18.3 \
  && gem install json -v 2.1.0 \
- && gem install fluentd -v 0.12.40
+ && gem install fluentd -v 0.14.20
 
 RUN gem install fluent-plugin-elasticsearch && \
     gem install fluent-plugin-grok-parser && \
@@ -44,7 +44,6 @@ RUN mkdir -p /fluentd/etc /fluentd/plugins
 
 COPY fluent.conf /fluentd/etc/
 
-
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
@@ -52,4 +51,5 @@ ENV LD_PRELOAD=""
 
 EXPOSE 24224 5140
 
-CMD exec fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins $FLUENTD_OPT
+CMD fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins $FLUENTD_OPT
+
