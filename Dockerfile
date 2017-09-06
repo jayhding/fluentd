@@ -26,11 +26,12 @@ RUN apk update \
  && echo 'gem: --no-document' >> /etc/gemrc \
  && gem install oj -v 2.18.3 \
  && gem install json -v 2.1.0 \
- && gem install fluentd -v 0.14.20
+ && gem install fluentd -v 0.12.40
 
 RUN gem install fluent-plugin-elasticsearch && \
     gem install fluent-plugin-grok-parser && \
     gem install fluent-plugin-parser && \
+    gem install fluent-plugin-s3 -v "~> 0.8"  --no-document && \
     gem install fluent-plugin-rewrite-tag-filter
 
 RUN apk del .build-deps \
